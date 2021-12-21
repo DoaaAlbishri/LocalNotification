@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Local Notification-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Local_Notification" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="work until" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axk-aQ-Eh0">
-                                <rect key="frame" x="163" y="587" width="88.5" height="25.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="workUntil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axk-aQ-Eh0">
+                                <rect key="frame" x="164" y="587" width="86.5" height="25.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -38,27 +38,36 @@
                                 <rect key="frame" x="158.5" y="686" width="97" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Start Timer"/>
+                                <connections>
+                                    <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bpd-6T-1ir"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeP-KZ-lwe">
-                                <rect key="frame" x="184" y="123" width="45" height="31"/>
+                                <rect key="frame" x="184" y="113" width="45" height="41"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="list.dash" catalog="system"/>
                                 <connections>
-                                    <segue destination="46f-CH-xIX" kind="show" id="sVE-1e-EHk"/>
+                                    <segue destination="46f-CH-xIX" kind="show" identifier="showTable" id="sVE-1e-EHk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmL-bl-3ka">
                                 <rect key="frame" x="311" y="123" width="41.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                                <connections>
+                                    <action selector="addNewTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GxH-fd-vs0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRZ-7I-TGx">
                                 <rect key="frame" x="47" y="123" width="43.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrow.uturn.left.square.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="restartTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yX1-pX-wzK"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQr-us-Cmh">
-                                <rect key="frame" x="187" y="303" width="40" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="minTimer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQr-us-Cmh">
+                                <rect key="frame" x="158" y="303" width="98" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" systemColor="tintColor"/>
                                 <nil key="highlightedColor"/>
@@ -87,22 +96,33 @@
                             <constraint firstItem="Axk-aQ-Eh0" firstAttribute="top" secondItem="39X-pj-8UJ" secondAttribute="bottom" constant="31" id="dDW-SH-cUT"/>
                             <constraint firstItem="u7H-tL-WId" firstAttribute="top" secondItem="Axk-aQ-Eh0" secondAttribute="bottom" constant="73.5" id="gW5-UL-ag3"/>
                             <constraint firstItem="KmL-bl-3ka" firstAttribute="leading" secondItem="IeP-KZ-lwe" secondAttribute="trailing" constant="82" id="nKA-od-vES"/>
-                            <constraint firstItem="IeP-KZ-lwe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="oui-4P-GVE"/>
+                            <constraint firstItem="IeP-KZ-lwe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="oui-4P-GVE"/>
                             <constraint firstItem="39X-pj-8UJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rSo-ra-uKD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KmL-bl-3ka" secondAttribute="trailing" constant="61.5" id="tvW-Ge-19t"/>
+                            <constraint firstItem="39X-pj-8UJ" firstAttribute="top" secondItem="lQr-us-Cmh" secondAttribute="bottom" constant="7" id="ue9-Yl-lZt"/>
                             <constraint firstItem="u37-vG-P85" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xSZ-fM-79g"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yBk-z5-Daw"/>
+                    <navigationItem key="navigationItem" title="Local Notification" id="yBk-z5-Daw">
+                        <barButtonItem key="backBarButtonItem" title="back" id="An0-I5-jAR"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="minTimer" destination="lQr-us-Cmh" id="Qx4-st-bdP"/>
+                        <outlet property="minutesPicker" destination="39X-pj-8UJ" id="GWe-7F-ehc"/>
+                        <outlet property="starterBtn" destination="u7H-tL-WId" id="PJE-hg-hCk"/>
+                        <outlet property="time" destination="zAp-ov-J5V" id="1hs-jN-Cr1"/>
+                        <outlet property="totalTime" destination="u37-vG-P85" id="dNh-dc-NWF"/>
+                        <outlet property="workUntil" destination="Axk-aQ-Eh0" id="XR8-Gh-hNU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="495.6521739130435" y="-17.410714285714285"/>
         </scene>
-        <!--View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="CIm-xh-O1E">
             <objects>
-                <viewController id="46f-CH-xIX" sceneMemberID="viewController">
+                <viewController id="46f-CH-xIX" customClass="TableViewController" customModule="Local_Notification" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="UG2-z4-KdJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -121,6 +141,9 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" id="eME-cV-GCR"/>
+                    <connections>
+                        <outlet property="tableView" destination="UG2-z4-KdJ" id="a1t-p4-Mrg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rfm-TC-CBZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
